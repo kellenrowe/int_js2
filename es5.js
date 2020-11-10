@@ -21,7 +21,7 @@ var PI = 3.14;
 PI = 42; // stop me from doing this!
 
 // 2. Refactor to ES2015 Global Constants
-
+const PI = 3.14;
 
 
 // 3. ES5 Assigning Variables to Object Properties

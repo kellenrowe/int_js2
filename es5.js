@@ -3,17 +3,18 @@ var name = 'Michelle';
 var favoriteColor = 'purple';
 var city = 'San Francisco';
 
-// console.log(
-//   name +
-//     ' lives in ' +
-//     city +
-//     ' and their favorite color is ' +
-//     favoriteColor +
-//   '.'
-console.log(`${name} lives in ${city} and their favorite color is ${favoriteColor}.`);
+console.log(
+  name +
+    ' lives in ' +
+    city +
+    ' and their favorite color is ' +
+    favoriteColor +
+  '.'
+)
 
 // 1. Refactor to ES2015 Template Literals:
 
+console.log(`${name} lives in ${city} and their favorite color is ${favoriteColor}.`);
 
 
 // 2. ES5 Global Constants
@@ -41,9 +42,9 @@ var banana = foods.fruits.banana;
 
 // 3. Refactor to ES2015 Object Destructuring
 
-let { apple, banana } = fruits                        // this is what we know
-let { fruits: { apple, banana } } = foods    
-let { fruits: {tomato: {color, seed }}}  = foods
+let { apple, banana } = fruits;                     // this is what we know
+let { fruits: { apple, banana } } = foods;
+let { fruits: {tomato: {color, seed }}}  = foods; //test case for object in an object in an object
 
 
 
@@ -55,8 +56,8 @@ nums[0] = nums[1];
 nums[1] = temp;
 
 // 4. Refactor to ES2015 Array Swap
-[1, 2] = [2, 1]; //error
-nums = [2, 1]; //points to a different array
+// [1, 2] = [2, 1]; //error
+// nums = [2, 1]; //points to a different array
 [nums[0], nums[1]] = [nums[1], nums[0]];
 
 
@@ -70,7 +71,7 @@ function double(nums) {
 // 5. Refactor to ES2015 Arrow Functions Shorthand
 
 function double(nums) {
-  return nums.map(num => num * 2)
+  return nums.map(num => num * 2);
 }
 
 
@@ -86,19 +87,23 @@ function add(a, b) {
 }
 
 // 6. Refactor to ES2015 Default Arguments
-
+function add(a = 10, b = 10){
+  return a + b; 
+}
 
 
 // 7. ES5 Function that takes a variable number of arguments
 function onlyEvens() {
   // in ES5, this is how we turned something
   // array-like into an actual array
-  var nums = Array.prototype.slice.call(arguments); 
+  var nums = Array.prototype.slice.call(arguments); //this is replaced in line 105, in the arguments of the function
   return nums.filter(function (num) {
     return num % 2 === 0;
   });
 }
 
 // 7. Refactor to ES2015
-
+function onlyEvens(...nums){
+ return nums.filter(num => num%2===0); 
+}
 

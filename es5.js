@@ -69,6 +69,9 @@ function double(nums) {
 
 // 5. Refactor to ES2015 Arrow Functions Shorthand
 
+function double(nums) {
+  return nums.map(num => num * 2)
+}
 
 
 // 6. ES5 Default Arguments

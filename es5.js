@@ -55,7 +55,9 @@ nums[0] = nums[1];
 nums[1] = temp;
 
 // 4. Refactor to ES2015 Array Swap
-
+[1, 2] = [2, 1]; //error
+nums = [2, 1]; //points to a different array
+[nums[0], nums[1]] = [nums[1], nums[0]];
 
 
 // 5. ES5 Map Callback

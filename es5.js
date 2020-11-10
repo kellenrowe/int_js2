@@ -29,6 +29,10 @@ var foods = {
   fruits: {
     apple: "red",
     banana: "yellow",
+    tomato: {
+      color: "green",
+      seed: true
+    }
   }
 };
 
@@ -36,6 +40,11 @@ var apple = foods.fruits.apple;
 var banana = foods.fruits.banana;
 
 // 3. Refactor to ES2015 Object Destructuring
+
+let { apple, banana } = fruits                        // this is what we know
+let { fruits: { apple, banana } } = foods    
+let { fruits: {tomato: {color, seed }}}  = foods
+
 
 
 
